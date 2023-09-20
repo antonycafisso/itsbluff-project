@@ -9,6 +9,7 @@ import org.springframework.web.client.HttpClientErrorException;
 import org.springframework.web.client.RestTemplate;
 
 import com.itsbluff.itsbluffproject.dto.WordDto;
+import com.itsbluff.itsbluffproject.view.WordValidateView;
 
 @RestController
 @RequestMapping("consulting-word")
@@ -23,6 +24,7 @@ public class WordValidateService {
             ResponseEntity<WordDto[]> response = restTemplate.getForEntity(apiUrl, WordDto[].class);
             WordDto[] wordDtos = response.getBody();
             if (wordDtos != null && wordDtos.length > 0) {
+                System.out.print("\033c");//clear screen
                 return wordDtos[0];
             }
         }catch(HttpClientErrorException.NotFound e){

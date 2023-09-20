@@ -6,12 +6,12 @@ import com.itsbluff.itsbluffproject.dto.WordDto;
 
 public class WordValidateView {
     public static void wordFound(WordDto wordValidate) {
+        WordDto[] wordDtos;
         try {
             if (wordValidate == null || wordValidate.getWord() == null) {
                 System.out.println("WORD NOT FOUND");
             } else {
                 System.out.println("\n\nWORD FOUND!!");
-                System.out.println(wordValidate.toString());
             }
         } catch (HttpClientErrorException.NotFound e) {
             System.out.println("WORD NOT FOUND");

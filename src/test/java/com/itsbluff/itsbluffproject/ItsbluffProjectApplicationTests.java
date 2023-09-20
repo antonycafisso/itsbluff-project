@@ -7,7 +7,7 @@ import org.springframework.boot.SpringApplication;
 import org.springframework.boot.test.context.SpringBootTest;
 
 import com.itsbluff.itsbluffproject.services.WordValidateService;
-import com.itsbluff.itsbluffproject.view.InitialCharacter;
+import com.itsbluff.itsbluffproject.view.InitialCharacterView;
 import com.itsbluff.itsbluffproject.view.UserInteraction;
 import com.itsbluff.itsbluffproject.controllers.InsertLetterController;
 import com.itsbluff.itsbluffproject.dto.WordDto;
