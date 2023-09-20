@@ -1,14 +1,14 @@
 package com.itsbluff.itsbluffproject.model;
 
-public class UserChoices {
+public class UserChoicesModel {
     private String side;
     private String letter;
 
-    public UserChoices(){
+    public UserChoicesModel(){
 
     }
 
-    public UserChoices(String side, String letter) {
+    public UserChoicesModel(String side, String letter) {
         this.side = side;
         this.letter = letter;
     }

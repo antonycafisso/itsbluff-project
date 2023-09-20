@@ -1,9 +1,9 @@
 package com.itsbluff.itsbluffproject.controllers;
 
-import com.itsbluff.itsbluffproject.model.UserChoices;
+import com.itsbluff.itsbluffproject.model.UserChoicesModel;
 
 public class InsertLetterController {
-        public static String insertLetterOnSide(UserChoices userChoices, String word) {
+        public static String insertLetterOnSide(UserChoicesModel userChoices, String word) {
         String leftSide = "L";
         String rightSide = "R";
         String result = new String();

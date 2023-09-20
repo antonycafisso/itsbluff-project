@@ -11,7 +11,7 @@ import com.itsbluff.itsbluffproject.view.InitialCharacterView;
 import com.itsbluff.itsbluffproject.view.UserInteraction;
 import com.itsbluff.itsbluffproject.controllers.InsertLetterController;
 import com.itsbluff.itsbluffproject.dto.WordDto;
-import com.itsbluff.itsbluffproject.model.UserChoices;
+import com.itsbluff.itsbluffproject.model.UserChoicesModel;
 import com.itsbluff.itsbluffproject.model.Word;
 
 @SpringBootTest
@@ -22,7 +22,7 @@ class ItsbluffProjectApplicationTests {
 
 		Scanner sc = new Scanner(System.in);
 		char[] charArray = new char[10];
-		UserChoices userChoices = new UserChoices();
+		UserChoicesModel userChoices = new UserChoicesModel();
 		String word = new String("hello");
 		WordValidateService wordValidateService = new WordValidateService();
 

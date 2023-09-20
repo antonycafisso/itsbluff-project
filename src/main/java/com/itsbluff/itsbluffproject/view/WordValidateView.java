@@ -6,7 +6,6 @@ import com.itsbluff.itsbluffproject.dto.WordDto;
 
 public class WordValidateView {
     public static void wordFound(WordDto wordValidate) {
-        WordDto[] wordDtos;
         try {
             if (wordValidate == null || wordValidate.getWord() == null) {
                 System.out.println("WORD NOT FOUND");
