@@ -10,6 +10,7 @@ import com.itsbluff.itsbluffproject.dto.WordDto;
 import com.itsbluff.itsbluffproject.model.UserChoices;
 import com.itsbluff.itsbluffproject.services.WordValidateService;
 import com.itsbluff.itsbluffproject.view.InitialCharacter;
+import com.itsbluff.itsbluffproject.view.InputPlayers;
 import com.itsbluff.itsbluffproject.view.UserInteraction;
 
 @SpringBootApplication
@@ -27,6 +28,9 @@ public class ItsbluffProjectApplication {
 		// Start the game
 		System.out.println("Press ENTER to start");
 		sc.nextLine();
+
+		// Input players name
+		InputPlayers.getPlayersName();
 
 		// Random character will be showed
 		String randomInicialCharacter = InitialCharacter.RandomInicialCharacter();
