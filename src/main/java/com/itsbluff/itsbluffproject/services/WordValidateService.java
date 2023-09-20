@@ -5,6 +5,7 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.client.HttpClientErrorException;
 import org.springframework.web.client.RestTemplate;
 
 import com.fasterxml.jackson.databind.ObjectMapper;
@@ -21,15 +22,15 @@ public class WordValidateService {
         RestTemplate restTemplate = new RestTemplate();
         ResponseEntity<WordDto[]> response = restTemplate.getForEntity(apiUrl, WordDto[].class);
 
-        if (response.getStatusCode().is2xxSuccessful()) {
+        try {
             WordDto[] wordDtos = response.getBody();
+            
             if (wordDtos != null && wordDtos.length > 0) {
                 return wordDtos[0];
             }
-        } else if(response.getStatusCode().is4xxClientError()){
-            
+        } catch (HttpClientErrorException.NotFound e) {
+            e.printStackTrace();
         }
-
         return new WordDto();
     }
 }
