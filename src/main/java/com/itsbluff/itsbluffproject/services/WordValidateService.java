@@ -7,18 +7,29 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 import org.springframework.web.client.RestTemplate;
 
-import com.itsbluff.itsbluffproject.model.Word;
+import com.fasterxml.jackson.databind.ObjectMapper;
+import com.itsbluff.itsbluffproject.dto.WordDto;
 
 @RestController
 @RequestMapping("consulting-word")
 public class WordValidateService {
 
     @GetMapping("{word}")
-    public static Word getWord(@PathVariable("word") String word) {
-        Word wordReturn = new Word();
+    public static WordDto getWord(@PathVariable("word") String word) {
+        String apiUrl = "https://api.dictionaryapi.dev/api/v2/entries/en/" + word;
 
         RestTemplate restTemplate = new RestTemplate();
-        ResponseEntity<Word> resp =  restTemplate.getForEntity("https://api.dictionaryapi.dev/api/v2/entries/en/",Word.class);
-        return resp.getBody();
+        ResponseEntity<WordDto[]> response = restTemplate.getForEntity(apiUrl, WordDto[].class);
+
+        if (response.getStatusCode().is2xxSuccessful()) {
+            WordDto[] wordDtos = response.getBody();
+            if (wordDtos != null && wordDtos.length > 0) {
+                return wordDtos[0];
+            }
+        } else if(response.getStatusCode().is4xxClientError()){
+            
+        }
+
+        return new WordDto();
     }
 }

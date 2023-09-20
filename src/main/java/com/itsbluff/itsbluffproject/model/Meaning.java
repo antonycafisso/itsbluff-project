@@ -1,9 +1,11 @@
 package com.itsbluff.itsbluffproject.model;
 
+import java.util.Arrays;
+
 import com.fasterxml.jackson.annotation.JsonProperty;
 
 public class Meaning {
-        @JsonProperty("partOfSpeech")
+    @JsonProperty("partOfSpeech")
     private String partOfSpeech;
 
     @JsonProperty("definitions")
@@ -47,5 +49,20 @@ public class Meaning {
         this.antonyms = antonyms;
     }
 
-    
+    @Override
+    public String toString() {
+        StringBuilder stringBuilder = new StringBuilder();
+        stringBuilder.append("Part of Speech: ").append(partOfSpeech).append("\n");
+
+        stringBuilder.append("Definitions:\n");
+        for (Definition definition : definitions) {
+            stringBuilder.append(definition.toString()).append("\n");
+        }
+
+        stringBuilder.append("Synonyms: ").append(Arrays.toString(synonyms)).append("\n");
+        stringBuilder.append("Antonyms: ").append(Arrays.toString(antonyms)).append("\n");
+
+        return stringBuilder.toString();
+    }
+
 }

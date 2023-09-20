@@ -47,5 +47,9 @@ public class Definition {
         this.example = example;
     }
 
+    @Override
+    public String toString() {
+        return "Definition: " + definition;
+    }
     
 }

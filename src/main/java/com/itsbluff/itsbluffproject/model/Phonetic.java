@@ -47,5 +47,12 @@ public class Phonetic {
         this.license = license;
     }
 
+    @Override
+    public String toString() {
+        StringBuilder stringBuilder = new StringBuilder();
+        stringBuilder.append("Audio: ").append(audio).append("\n");
+        return stringBuilder.toString();
+    }
+
     
 }
