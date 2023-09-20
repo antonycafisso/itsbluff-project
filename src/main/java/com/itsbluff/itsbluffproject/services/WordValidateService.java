@@ -8,7 +8,6 @@ import org.springframework.web.bind.annotation.RestController;
 import org.springframework.web.client.HttpClientErrorException;
 import org.springframework.web.client.RestTemplate;
 
-import com.fasterxml.jackson.databind.ObjectMapper;
 import com.itsbluff.itsbluffproject.dto.WordDto;
 
 @RestController
@@ -20,17 +19,16 @@ public class WordValidateService {
         String apiUrl = "https://api.dictionaryapi.dev/api/v2/entries/en/" + word;
 
         RestTemplate restTemplate = new RestTemplate();
-        ResponseEntity<WordDto[]> response = restTemplate.getForEntity(apiUrl, WordDto[].class);
-
-        try {
+        try{
+            ResponseEntity<WordDto[]> response = restTemplate.getForEntity(apiUrl, WordDto[].class);
             WordDto[] wordDtos = response.getBody();
-            
             if (wordDtos != null && wordDtos.length > 0) {
                 return wordDtos[0];
             }
-        } catch (HttpClientErrorException.NotFound e) {
-            e.printStackTrace();
+        }catch(HttpClientErrorException.NotFound e){
+            // System.out.println("Word not found");
         }
+        
         return new WordDto();
     }
 }

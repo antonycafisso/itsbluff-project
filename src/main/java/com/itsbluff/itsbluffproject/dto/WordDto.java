@@ -50,7 +50,7 @@ public class WordDto {
 
     @Override
     public String toString() {
-        int maxMeaningsToShow = 2;
+        int maxMeaningsToShow = 1;
         int maxAudiosToShow = 2;
         int countMeaning = 0;
         int countAudios = 0;

@@ -10,7 +10,7 @@ public class UserInteraction {
         String side = new String();
         String letter = new String();
         UserChoices userChoices = new UserChoices(side, letter);
-
+        
         // Player options
         System.out.println("\n\n1 INSERT A NEW LETTER");
         System.out.println("2 IT'S BLUFF");
