@@ -2,7 +2,7 @@ package com.itsbluff.itsbluffproject.model;
 
 import com.fasterxml.jackson.annotation.JsonProperty;
 
-public class License {
+public class LicenseModel {
     @JsonProperty("name")
     private String name;
 

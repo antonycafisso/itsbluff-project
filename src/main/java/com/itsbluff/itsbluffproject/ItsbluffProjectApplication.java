@@ -1,6 +1,5 @@
 package com.itsbluff.itsbluffproject;
 
-import java.util.List;
 import java.util.Scanner;
 
 import org.springframework.boot.SpringApplication;

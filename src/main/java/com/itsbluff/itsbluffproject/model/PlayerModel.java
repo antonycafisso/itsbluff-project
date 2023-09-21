@@ -1,16 +1,16 @@
 package com.itsbluff.itsbluffproject.model;
 
-public class Player {
+public class PlayerModel {
     private int index;
-    private String name;
+    private String score;
 
-    public Player(){
+    public PlayerModel(){
 
     }
 
-    public Player(int index, String name) {
+    public PlayerModel(int index, String name) {
         this.index = index;
-        this.name = name;
+        this.score = name;
     }
 
     public int getIndex() {
@@ -21,15 +21,15 @@ public class Player {
         this.index = index;
     }
 
-    public Player(String name) {
-        this.name = name;
+    public PlayerModel(String name) {
+        this.score = name;
     }
 
     public String getName() {
-        return name;
+        return score;
     }
 
     public void setName(String name) {
-        this.name = name;
+        this.score = name;
     }
 }

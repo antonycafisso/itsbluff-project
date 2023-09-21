@@ -2,7 +2,7 @@ package com.itsbluff.itsbluffproject.model;
 
 import com.fasterxml.jackson.annotation.JsonProperty;
 
-public class Phonetic {
+public class PhoneticModel {
     @JsonProperty("audio")
     private String audio;
 
@@ -13,7 +13,7 @@ public class Phonetic {
     private String sourceUrl;
 
     @JsonProperty("license")
-    private License license;
+    private LicenseModel license;
 
     public String getAudio() {
         return audio;
@@ -39,11 +39,11 @@ public class Phonetic {
         this.sourceUrl = sourceUrl;
     }
 
-    public License getLicense() {
+    public LicenseModel getLicense() {
         return license;
     }
 
-    public void setLicense(License license) {
+    public void setLicense(LicenseModel license) {
         this.license = license;
     }
 

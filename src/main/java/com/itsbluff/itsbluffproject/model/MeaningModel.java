@@ -4,12 +4,12 @@ import java.util.Arrays;
 
 import com.fasterxml.jackson.annotation.JsonProperty;
 
-public class Meaning {
+public class MeaningModel {
     @JsonProperty("partOfSpeech")
     private String partOfSpeech;
 
     @JsonProperty("definitions")
-    private Definition[] definitions;
+    private DefinitionModel[] definitions;
 
     @JsonProperty("synonyms")
     private String[] synonyms;
@@ -25,11 +25,11 @@ public class Meaning {
         this.partOfSpeech = partOfSpeech;
     }
 
-    public Definition[] getDefinitions() {
+    public DefinitionModel[] getDefinitions() {
         return definitions;
     }
 
-    public void setDefinitions(Definition[] definitions) {
+    public void setDefinitions(DefinitionModel[] definitions) {
         this.definitions = definitions;
     }
 
@@ -55,7 +55,7 @@ public class Meaning {
         stringBuilder.append("Part of Speech: ").append(partOfSpeech).append("\n");
 
         stringBuilder.append("Definitions:\n");
-        for (Definition definition : definitions) {
+        for (DefinitionModel definition : definitions) {
             stringBuilder.append(definition.toString()).append("\n");
         }
 

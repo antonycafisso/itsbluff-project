@@ -2,7 +2,7 @@ package com.itsbluff.itsbluffproject.model;
 
 import com.fasterxml.jackson.annotation.JsonProperty;
 
-public class Definition {
+public class DefinitionModel {
     @JsonProperty("definition")
     private String definition;
 

@@ -4,16 +4,16 @@ import java.util.Arrays;
 import java.util.List;
 
 import com.fasterxml.jackson.annotation.JsonProperty;
-import com.itsbluff.itsbluffproject.model.Meaning;
-import com.itsbluff.itsbluffproject.model.Phonetic;
+import com.itsbluff.itsbluffproject.model.MeaningModel;
+import com.itsbluff.itsbluffproject.model.PhoneticModel;
 
 public class WordDto {
     @JsonProperty("word")
     private String word;
     @JsonProperty("phonetics")
-    private List<Phonetic> phonetic;
+    private List<PhoneticModel> phonetic;
     @JsonProperty("meanings")
-    private Meaning[] meaning;
+    private MeaningModel[] meaning;
     private Boolean wordFound;
 
     public String getWord() {
@@ -24,19 +24,19 @@ public class WordDto {
         this.word = word;
     }
 
-    public List<Phonetic> getPhonetic() {
+    public List<PhoneticModel> getPhonetic() {
         return phonetic;
     }
 
-    public void setPhonetic(List<Phonetic> phonetic) {
+    public void setPhonetic(List<PhoneticModel> phonetic) {
         this.phonetic = phonetic;
     }
 
-    public Meaning[] getMeaning() {
+    public MeaningModel[] getMeaning() {
         return meaning;
     }
 
-    public void setMeaning(Meaning[] meaning) {
+    public void setMeaning(MeaningModel[] meaning) {
         this.meaning = meaning;
     }
 
@@ -61,7 +61,7 @@ public class WordDto {
 
         // Meaning
         stringBuilder.append("\n\nMeanings:\n");
-        for (Meaning meaningObj : meaning) {
+        for (MeaningModel meaningObj : meaning) {
             if (countMeaning >= maxMeaningsToShow) {
                 break;
             }
@@ -71,7 +71,7 @@ public class WordDto {
 
         // Phonetic
         stringBuilder.append("Audios:\n");
-        for (Phonetic phoneticObj : phonetic) {
+        for (PhoneticModel phoneticObj : phonetic) {
             if (countAudios >= maxAudiosToShow) {
                 break;
             }

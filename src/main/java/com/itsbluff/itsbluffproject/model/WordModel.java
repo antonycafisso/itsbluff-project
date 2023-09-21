@@ -106,18 +106,18 @@ import java.util.Arrays;
     }
 ] */
 
-public class Word {
+public class WordModel {
     private String word;
     private String audio;
     private String meaning;
     private String example;
     private String[] synonyms;
 
-    public Word(){
+    public WordModel(){
 
     }
 
-    public Word(String word, String audio, String meaning, String example, String[] synonyms) {
+    public WordModel(String word, String audio, String meaning, String example, String[] synonyms) {
         this.word = word;
         this.audio = audio;
         this.meaning = meaning;
