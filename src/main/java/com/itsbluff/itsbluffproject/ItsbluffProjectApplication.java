@@ -7,9 +7,11 @@ import org.springframework.boot.autoconfigure.SpringBootApplication;
 
 import com.itsbluff.itsbluffproject.controllers.InsertLetterController;
 import com.itsbluff.itsbluffproject.dto.WordDto;
+import com.itsbluff.itsbluffproject.model.PlayerModel;
 import com.itsbluff.itsbluffproject.model.UserChoicesModel;
 import com.itsbluff.itsbluffproject.services.WordValidateService;
 import com.itsbluff.itsbluffproject.view.InitialCharacterView;
+import com.itsbluff.itsbluffproject.view.PlayerView;
 import com.itsbluff.itsbluffproject.view.UserInteractionView;
 import com.itsbluff.itsbluffproject.view.WordValidateView;
 
@@ -24,7 +26,10 @@ public class ItsbluffProjectApplication {
 		UserChoicesModel userChoices = new UserChoicesModel();
 		String word = new String();
 		WordDto wordValidate = new WordDto();
-
+		PlayerModel playerModel1 = new PlayerModel(1, 5);
+		PlayerModel playerModel2 = new PlayerModel(2, 5);
+		PlayerView playerView = new PlayerView(playerModel1, playerModel2);
+		
 		// Start the game
 		System.out.println("Press ENTER to start");
 		sc.nextLine();
@@ -38,6 +43,7 @@ public class ItsbluffProjectApplication {
 		do {
 			System.out.print("\033c");// clear screen
 			WordValidateView.wordFound(wordValidate);// return Word found or not
+			playerView.displayPlayerPoints();// Display players and their points
 			userChoices = UserInteractionView.playerOptions(word);// Player options
 			word = InsertLetterController.insertLetterOnSide(userChoices, word);// Insert letter from controller
 			wordValidate = WordValidateService.getWord(word);// Word valide, if this word exist or not in dictionary

@@ -2,15 +2,15 @@ package com.itsbluff.itsbluffproject.model;
 
 public class PlayerModel {
     private int index;
-    private String score;
+    private int points = 5;
 
-    public PlayerModel(){
+    public PlayerModel() {
 
     }
 
-    public PlayerModel(int index, String name) {
+    public PlayerModel(int index, int points) {
         this.index = index;
-        this.score = name;
+        this.points = points;
     }
 
     public int getIndex() {
@@ -21,15 +21,30 @@ public class PlayerModel {
         this.index = index;
     }
 
-    public PlayerModel(String name) {
-        this.score = name;
+    public PlayerModel(int points) {
+        this.points = points;
     }
 
-    public String getName() {
-        return score;
+    public int getpoints() {
+        return points;
     }
 
-    public void setName(String name) {
-        this.score = name;
+    public void setpoints(int points) {
+        this.points = points;
     }
+
+    public void decrementPlayer1Points() {
+        points = points - 1;
+    }
+    
+    public void decrementPlayer2Points() {
+        points = points - 2;
+    }
+
+    @Override
+    public String toString() {
+        return "Player " + index + " / Points:" + points + "";
+    }
+
+    
 }
